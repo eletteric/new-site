@@ -1,0 +1,39 @@
+$colors: (
+  primary: #8c0303,
+  secondary: #260606,
+  yellow: #f2eb80,
+  pink: #f2cf8d,
+  brown: #591711
+);
+
+$defaultfontsize: 13em;
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+p {
+  color: color(primary);
+  font-family: "Anton", sans-serif;
+  font-size: $defaultfontsize;
+}
+
+#wrapper {
+  clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+
+  background-color: color(yellow);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
